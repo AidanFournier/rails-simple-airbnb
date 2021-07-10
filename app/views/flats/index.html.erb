@@ -1,0 +1,79 @@
+<div class="m-5">
+  <h1 class="my-3">All our flats</h1>
+
+  <div class="row">
+
+    <% @flats.each do |flat| %>
+      <div class="col-sm-12 col-md-6 col-lg-3">
+        <%= link_to flat_path(flat) do %>
+        <div class="card" style="width: 18rem;">
+          <img src="https://images.unsplash.com/photo-1625753397740-d4a29cb1ebfc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1570&q=80" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= flat.name %>
+            </h5>
+            <p class="card-text">
+              <%= flat.address %>
+            </p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <%= flat.number_of_guests %>
+                <%= flat.price_per_night %>
+            </li>
+          </ul>
+          <div class="card-body">
+            <a href="#" class="card-link">More info</a>
+            <a href="#" class="card-link">Edit</a>
+            <a href="#" class="card-link">Remove</a>
+          </div>
+        <% end %>
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<!-- <div class="container">
+  <div class="row">
+    <% @flats.each do |flat| %>
+        <div class="col-3">
+          <div class="card-flat">
+            <img src="https://source.unsplash.com/WLUHO9A_xik/200x150">
+            <div class="card-flat-infos">
+              <div>
+                <%= flat.name %>
+                <%= flat.address %>
+              </div>
+              <div class="d-flex">
+                <%= flat.number_of_guests %>
+                <%= flat.price_per_night %>
+              </div>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div> -->
+
+<!--
+<div class="card-trip">
+    <div>
+      <% @flats.each do |flat| %>
+        <img src="https://source.unsplash.com/featured/?travel,japan" />
+        <div class="card-trip-infos">
+          <%= flat.name %>
+          <%= flat.address %>
+        </div>
+        <div>
+          <%= flat.number_of_guests %>
+          <%= flat.price_per_night %>
+        </div>
+      <% end %>
+    </div>
+    <h2 class="card-trip-pricing">£99.99</h2>
+  </div>
+</div>
+
+ -->
